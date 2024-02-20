@@ -6,6 +6,9 @@
 import fleshEaters from './albums/01-Prayer-Line-Flesh-Eaters.mp3';
 import vaderBomb from './albums/02-Vaderbomb-El-Santo-Contra-Los-Monstruos.mp3'
 import cover from './albums/cover.png';
+import thief from './albums/05 Thief.mp3';
+import myth from './albums/09 Myth.mp3';
+import kinghorseCover from './albums/kinghorse-1998.jpg';
 
 const tracks = [
   {
@@ -19,6 +22,18 @@ const tracks = [
     src: vaderBomb,
     author: 'Vaderbomb',
     thumbnail: cover
+  },
+  {
+    title: 'Thief',
+    src: thief,
+    author: 'Kinghorse',
+    thumbnail: kinghorseCover,
+  },
+  {
+    title: 'Myth',
+    src: myth,
+    author: 'Kinghorse',
+    thumbnail: kinghorseCover,
   }
 ];
 

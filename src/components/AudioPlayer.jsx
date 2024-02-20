@@ -9,8 +9,9 @@ const AudioPlayer = () => {
   const [currentTrack, setCurrentTrack] = useState(tracks[trackIndex]);
   const [timeProgress, setTimeProgress] = useState(0);
   const [duration, setDuration] = useState(0);
-  const progressBarRef = useRef();
 
+  //Reference
+  const progressBarRef = useRef();
   const audioRef = useRef();
 
   const handleNext = () => {
@@ -21,10 +22,15 @@ const AudioPlayer = () => {
       setTrackIndex((prev) => prev +1);
       setCurrentTrack(tracks[trackIndex + 1]);
     }
-  }
+  };
 
   return (
-    <div className="audio-player">
+    <section className={
+      "audio-player " +
+      (currentTrack.thumbnail ? "audio-player--background" : "")
+      }
+      style={currentTrack.thumbnail ? {backgroundImage: `url("${currentTrack.thumbnail}")`} : {backgroundImage: 'none'}}
+      >
       <div className="inner">
         <DisplayTrack
         {...{currentTrack, audioRef, setDuration, progressBarRef, handleNext}}
@@ -36,7 +42,7 @@ const AudioPlayer = () => {
           {...{progressBarRef, audioRef, timeProgress, duration}}
         />
       </div>
-    </div>
+    </section>
   );
 };
 export default AudioPlayer;

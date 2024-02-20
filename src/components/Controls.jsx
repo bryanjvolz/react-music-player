@@ -29,6 +29,7 @@ const Controls = ({
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(60);
   const [muteVolume, setMuteVolume] = useState(false);
+
   const playAnimationRef = useRef();
 
   const togglePlayPause = () => {
@@ -45,7 +46,7 @@ const Controls = ({
     );
 
     playAnimationRef.current = requestAnimationFrame(repeat);
-  }, []);
+  }, [audioRef, duration, progressBarRef, setTimeProgress]);
 
   useEffect(()=>{
     if(isPlaying){
